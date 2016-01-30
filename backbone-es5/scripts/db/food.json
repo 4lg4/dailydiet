@@ -1,0 +1,74 @@
+{
+  "1": {
+    "name": "peito de peru",
+    "unity": "un",
+    "quantity":1,
+    "calories":16,
+    "protein":4
+  },
+  "2": {
+    "name": "banana prata",
+    "unity": "un",
+    "quantity":1,
+    "calories":100
+  },
+  "3": {
+    "name": "iogurte mamão",
+    "unity": "g",
+    "quantity":100,
+    "calories":111,
+    "protein":2
+  },
+  "4": {
+    "name": "batata doce",
+    "unity": "g",
+    "quantity":100,
+    "calories":116
+  },
+  "5": {
+    "name": "café sem açucar",
+    "unity": "ml",
+    "quantity":100,
+    "calories":8
+  },
+  "6": {
+    "name": "pão de queijo",
+    "unity": "g",
+    "quantity":25,
+    "calories":75
+  },
+  "7": {
+    "name": "wafel holandês",
+    "unity": "un",
+    "quantity":1,
+    "calories":127
+  },
+  "8": {
+    "name": "pão francês",
+    "unity": "un",
+    "quantity":1,
+    "calories":127
+  },
+  "9": {
+    "name": "peito frango",
+    "unity": "un",
+    "quantity":1,
+    "calories":170,
+    "protein":32
+  },
+  "10": {
+    "name": "ovo frito",
+    "unity": "un",
+    "quantity":1,
+    "calories":110,
+    "protein":6
+  },
+  "11": {
+    "name": "salmão",
+    "unity": "g",
+    "quantity":100,
+    "calories":170,
+    "protein":19
+  }
+
+}

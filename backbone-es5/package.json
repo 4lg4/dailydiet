@@ -1,0 +1,26 @@
+{
+  "name": "dailydiet",
+  "version": "1.0.0",
+  "description": "dailydiet",
+  "main": "index.html",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://Adrianoleal@bitbucket.org/teamalgame/dailydiet.git"
+  },
+  "author": "Adriano Leal - akgleal@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "backbone": "^1.2.3",
+    "backbone.localstorage": "^1.1.16",
+    "jquery": "^2.2.0",
+    "moment": "^2.11.1",
+    "requirejs": "^2.1.22",
+    "requirejs-json": "0.0.3",
+    "requirejs-text": "^2.0.12",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {}
+}
