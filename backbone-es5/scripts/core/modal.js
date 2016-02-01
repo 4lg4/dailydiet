@@ -73,7 +73,7 @@ define([
             this.modalItem = this.$('.app-modal');
 
 
-            app.ui.body.modals().append(this.el);
+            app.ui.body.modals().html(this.el);
 
             return this;
         },

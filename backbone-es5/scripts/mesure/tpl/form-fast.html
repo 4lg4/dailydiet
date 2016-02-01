@@ -1,0 +1,52 @@
+<div class="col-xs-12">
+
+    <div class="form-group">
+        <div class="btn-group tabs" data-toggle="buttons"  style="width: 100%;">
+            <label class="btn btn-primary active tab-weight" style="width: 50%;">
+                <input type="radio" autocomplete="off" name="container-tabs" checked> weight
+            </label>
+            <label class="btn btn-primary tab-fat" style="width: 50%;">
+                <input type="radio" autocomplete="off" name="container-tabs"> fat
+            </label>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Date</label>
+        <div class="input-group">
+            <span class="input-group-btn btn-calendar">
+                <button class="btn btn-default" type="button">
+                    <i class="glyphicon glyphicon-calendar"></i>
+                </button>
+            </span>
+            <input type="text" class="form-control" name="createdAt">
+        </div>
+    </div>
+
+    <div class="weight-container">
+        <div class="form-group">
+            <label>Weight</label>
+            <input type="number" class="form-control" name="weight" value="<%= weight %>">
+        </div>
+    </div>
+
+    <div class="fat-container" style="display: none;">
+        <div class="form-group">
+            <label>Fat Leg</label>
+            <input type="number" class="form-control" name="leg" value="<%= leg %>">
+        </div>
+        <div class="form-group">
+            <label>Fat Chest / Arm</label>
+            <input type="text" class="form-control" name="chest" value="<%= chest %>">
+        </div>
+        <div class="form-group">
+            <label>Fat Belly / Anca</label>
+            <input type="number" class="form-control" name="belly" value="<%= belly %>">
+        </div>
+    </div>
+
+    <div class="col-xs-12">
+        <div class="btn btn-success pull-right btn-save">Save</div>
+    </div>
+
+</div>

@@ -15,6 +15,7 @@ require.config({
         backboneLocalStorage: 'node_modules/backbone.localstorage/backbone.localStorage-min',
         bootstrap: 'node_modules/bootstrap/dist/js/bootstrap.min',
         moment: 'node_modules/moment/min/moment-with-locales.min',
+        datetimepicker: 'node_modules/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min',
 
         //shortcut paths
         //templates: '../templates',
@@ -59,6 +60,7 @@ require([
     , 'backbone'
     , 'backboneLocalStorage'
     , 'bootstrap'
+    , 'datetimepicker'
     , 'scripts/app'
     , 'scripts/core/db'
     , 'scripts/core/router'
@@ -72,6 +74,7 @@ require([
     , Backbone
     , BackboneLocalStorage
     , Bootstrap
+    , datetimepicker
     , app
     , DB
     , Router

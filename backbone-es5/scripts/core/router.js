@@ -31,7 +31,10 @@ define([
             'user/:id': 'user',			    // nao tirar dessa ordem
 
             'mesure': 'mesure',					// nao tirar dessa ordem
-            'mesure/:id': 'mesure'			    // nao tirar dessa ordem
+            'mesure/:id': 'mesure',			    // nao tirar dessa ordem
+
+            'eat': 'eat',					// nao tirar dessa ordem
+            'eat/:id': 'eat'			    // nao tirar dessa ordem
         },
 
         // when a route is called always cross here
@@ -106,6 +109,47 @@ define([
             require(['scripts/mesure/initialize'], function(mesure){
                 app.m.mesure = mesure;
                 app.m.mesure.initialize(id);
+            });
+        },
+
+        mesureAddFast: function(id){
+            console.log('core:router:mesure', id);
+
+            require(['scripts/mesure/form'], function(form){
+                if(app.m.mesure){
+                    app.m.mesure.form = form;
+                } else {
+                    app.m.mesure = {
+                        form: form
+                    };
+                }
+
+                app.m.mesure.form.addFast();
+            });
+        },
+
+        eatAddFast: function(id){
+            console.log('core:router:eat', id);
+
+            require(['scripts/eat/form'], function(form){
+                if(app.m.eat){
+                    app.m.eat.form = form;
+                } else {
+                    app.m.eat = {
+                        form: form
+                    };
+                }
+
+                app.m.eat.form.addFast();
+            });
+        },
+
+        eat: function(){
+            console.log('core:router:eat');
+
+            require(['scripts/eat/initialize'], function(eat){
+                app.m.eat = eat;
+                app.m.eat.initialize();
             });
         },
 

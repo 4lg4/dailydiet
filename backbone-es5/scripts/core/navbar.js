@@ -19,6 +19,7 @@ define([
         events: {
             'click .app-menu-dashboard': 'menu-dashboard',
             'click .app-menu-foodUser': 'menu-foodUser',
+            'click .app-menu-eatAdd': 'menu-eatAdd',
             'click .app-menu-userMesure': 'menu-userMesure',
             'click .app-menu-user': 'menu-user',
             'click .app-menu-food': 'menu-food',
@@ -82,13 +83,22 @@ define([
             //}
         },
 
+        'menu-eatAdd': function(){
+            console.log('core:navbar:eatAdd');
+
+            this.menuUnActive();
+            this.$('.app-menu-eatAdd').addClass('active');
+
+            app.router.eatAddFast();
+        },
+
         'menu-userMesure': function(){
             console.log('core:navbar:userMesure');
 
             this.menuUnActive();
             this.$('.app-menu-userMesure').addClass('active');
 
-            //app.router.foodUserAdd();
+            app.router.mesureAddFast();
         },
 
         'menu-user': function(){
@@ -113,6 +123,14 @@ define([
             this.menuUnActive();
             this.menuDropDownActive();
             this.$('.app-menu-mesure').addClass('active');
+        },
+
+        'menu-eat': function(){
+            console.log('core:navbar:menuEat');
+
+            this.menuUnActive();
+            this.menuDropDownActive();
+            this.$('.app-menu-eat').addClass('active');
         }
 
 
