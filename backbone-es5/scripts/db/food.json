@@ -69,6 +69,33 @@
     "quantity":100,
     "calories":170,
     "protein":19
+  },
+  "12": {
+    "name": "iogurte integral mel",
+    "unity": "g",
+    "quantity": 1,
+    "calories": 1.1,
+    "carbs": 0.17,
+    "protein": 0.032,
+    "fat": 0.031
+  },
+  "13": {
+    "name": "arroz branco",
+    "unity": "g",
+    "quantity": 1,
+    "calories": 1.3,
+    "carbs": 0.28,
+    "protein": 0.027,
+    "fat": 0.003
+  },
+  "14": {
+    "name": "batata inglesa",
+    "unity": "g",
+    "quantity": 1,
+    "calories": 0.75,
+    "carbs": 0.17,
+    "protein": 0.02,
+    "fat": 0.001
   }
 
 }

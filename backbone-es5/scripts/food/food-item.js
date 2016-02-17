@@ -23,37 +23,20 @@ define([
         },
 
         initialize: function(){
-            console.log('module:user:initialize');
+            console.log('module:food:initialize');
 
+            this.model.on('change',this.render,this);
+            
             this.render();
 
         },
 
         render: function(){
-            console.log('module:user:render');
+            console.log('module:food:render');
 
             this.$el.html(this.template(this.model.toJSON()));
 
             return this;
-        },
-
-        show: function(){
-            console.log('module:user:show');
-
-        },
-
-
-        save: function(){
-            console.log('module:user:save');
-
-            this.model.set({
-                name: this.$('input[name=name]').val(),
-                email: this.$('input[name=email]').val(),
-                height: this.$('input[name=height]').val(),
-                birthyear: this.$('input[name=birthyear]').val()
-            });
-
-            this.model.save();
         }
     });
 });

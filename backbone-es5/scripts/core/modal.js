@@ -84,6 +84,12 @@ define([
             this.modalItem.modal('show');
         },
 
+        hide: function(){
+            console.log('core:modal:hide');
+
+            this.modalItem.modal('hide');
+        },
+
         // garbage collector
         destroy: function(){
             console.log('core:modal:destroy');

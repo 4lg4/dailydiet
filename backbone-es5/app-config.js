@@ -16,6 +16,8 @@ require.config({
         bootstrap: 'node_modules/bootstrap/dist/js/bootstrap.min',
         moment: 'node_modules/moment/min/moment-with-locales.min',
         datetimepicker: 'node_modules/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min',
+        typeahead: 'node_modules/typeahead.js/dist/typeahead.jquery',
+        bloodhound: 'node_modules/typeahead.js/dist/bloodhound.min',
 
         //shortcut paths
         //templates: '../templates',
@@ -47,6 +49,9 @@ require.config({
         bootstrap : {
             deps : ["jquery"],
             exports : "Bootstrap"
+        },
+        typeahead : {
+            deps : ["jquery", "bloodhound"]
         }
     }
 });
@@ -66,6 +71,7 @@ require([
     , 'scripts/core/router'
     , 'scripts/core/navbar'
     , 'scripts/core/modal'
+    , 'typeahead'
 ],function(
       promisebluebird
     , $
@@ -80,6 +86,7 @@ require([
     , Router
     , Navbar
     , Modal
+    , typeahead
 ){
 
     window.Promise = promisebluebird; // dont remove this

@@ -2,20 +2,38 @@
 
     <div class="form-group">
         <label>Date</label>
-        <div class="createdAtShow"></div>
+        <div class="input-group">
+            <span class="input-group-btn btn-calendar">
+                <button class="btn btn-default" type="button">
+                    <i class="glyphicon glyphicon-calendar"></i>
+                </button>
+            </span>
+            <input type="text" class="form-control" name="createdAt">
+        </div>
     </div>
-    <div class="form-group">
-        <label>Food</label>
-        <input type="number" class="form-control" name="food" value="<%= food %>">
-    </div>
-    <div class="form-group">
-        <label>Quantity</label>
-        <input type="number" class="form-control" name="quantity" value="<%= quantity %>">
+    <div class="row">
+        <div class="form-group col-xs-12 col-md-7">
+            <label>Food</label>
+            <div class="input-group">
+                <span class="input-group-addon btn-search">
+                    <i class="glyphicon glyphicon-search"></i>
+                </span>
+                <input type="text" class="form-control" name="food" placeholder="Search here">
+            </div>
+        </div>
+
+        <div class="form-group col-xs-9 col-md-3">
+            <label>Quantity</label>
+            <input type="number" class="form-control" name="quantity" value="<%= quantity %>">
+        </div>
+        <div class="form-group col-xs-3 col-md-2">
+            <label>Unity</label>
+            <div><h5 class="unity"></h5></div>
+        </div>
     </div>
 
 
-    <div class="col-xs-12">
-        <div class="btn btn-success pull-right btn-save">Save</div>
+    <div class="col-xs-12 clearfix" style="margin-top: 20px;">
+        <div class="btn btn-success btn-lg col-xs-12 btn-save">Save</div>
     </div>
-
 </div>

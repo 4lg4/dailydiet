@@ -57,6 +57,15 @@ define([
             this.show();
         },
 
+        fixValues: function(){
+            if(this.model.get('quantity') !== 1){
+                this.model.set('calories', (this.model.get('calories') || 0) / this.model.get('quantity'));
+                this.model.set('carbs', (this.model.get('carbs') || 0) / this.model.get('quantity'));
+                this.model.set('protein', (this.model.get('protein') || 0) / this.model.get('quantity'));
+                this.model.set('fat', (this.model.get('fat') || 0) / this.model.get('quantity'));
+            }
+        },
+
         save: function(){
             console.log('module:foodUser:form:save');
 
@@ -65,9 +74,13 @@ define([
                 quantity: this.$('input[name=quantity]').val(),
                 unity: this.$('input[name=unity]').val(),
                 calories: this.$('input[name=calories]').val(),
+                carbs: this.$('input[name=carbs]').val(),
                 protein: this.$('input[name=protein]').val(),
+                fat: this.$('input[name=fat]').val(),
                 description: this.$('textarea[name=description]').val()
             });
+
+            this.fixValues();
 
             app.db.foodUser.create(this.model);
 

@@ -21,14 +21,16 @@ define([
         },
 
         initialize: function(){
-            console.log('module:user:initialize');
+            console.log('module:fooduser:initialize');
+
+            this.model.on('change',this.render,this);
 
             this.render();
 
         },
 
         render: function(){
-            console.log('module:user:render');
+            console.log('module:fooduser:render');
 
             this.$el.html(this.template(this.model.toJSON()));
 
@@ -36,7 +38,7 @@ define([
         },
 
         edit: function(){
-            console.log('module:user:show');
+            console.log('module:fooduser:show');
             app.m.food.formFoodCustom.edit(this.model);
         }
     });

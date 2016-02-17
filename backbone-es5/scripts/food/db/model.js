@@ -13,7 +13,9 @@ define([
             unity: null,
             quantity: 0,
             calories: null,
-            protein: null
+            protein: null,
+            carbs: null,
+            fat: null
         }
     });
 

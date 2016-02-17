@@ -15,7 +15,7 @@ define([
                 createdAt: moment().toISOString(),
                 food: null,
                 foodUser: null,
-                quantity:null
+                quantity: null
             }
         }
     });

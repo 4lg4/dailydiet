@@ -14,6 +14,8 @@ define([
             quantity: 0,
             calories: null,
             protein: null,
+            carbs: null,
+            fat: null,
             description: null
         }
     });

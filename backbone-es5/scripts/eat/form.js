@@ -37,30 +37,78 @@ define([
 
             this.$el.html(this.template(this.model.toJSON()));
 
-            this.$('.createdAtShow').text(app.moment(this.model.get('createdAt')).format('lll'));
+            //this.$('.createdAtShow').text(app.moment(this.model.get('createdAt')).format('lll'));
+            this.calendarInitialize();
+            this.foodListInitialize();
 
             return this;
         },
         
         show: function(){
-            console.log('module:eat:form:render');
+            console.log('module:eat:form:show');
 
             if(this.modal){
                 this.modal.show();
             }
         },
 
+        hide: function(){
+            console.log('module:eat:form:hide');
+
+            if(this.modal){
+                this.modal.hide();
+            }
+        },
+
         addFast: function(){
             console.log('module:eat:form:addFast');
 
-            this.template = tplFormFast;
             this.model = new Model();
             this.render();
 
-            this.calendarInitialize();
-            this.tabsToggleInitialize();
-
             this.show();
+        },
+
+        foodListInitialize: function(){
+            console.log('module:eat:form:foodListInitialize');
+
+            var foods = _.union($app.db.food.toJSON(), _.map($app.db.foodUser.toJSON(), function(food){
+                food.fromUser = true;
+                return food;
+            }));
+
+            var food = new Bloodhound({
+                datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
+                queryTokenizer: Bloodhound.tokenizers.whitespace,
+                local: foods
+            });
+
+            this.foodListField = this.$('input[name=food]').typeahead({
+                hint: true,
+                highlight: true,
+                minLength: 1
+            }, {
+                name: 'app-searchfield',
+                display: 'name',
+                source: food
+            });
+
+            this.foodListField.on('typeahead:select', _.bind(this.foodListSelect, this));
+        },
+
+        foodListSelect: function(evt,food){
+            console.log('module:eat:form:foodListSelect', food);
+
+            if(food.fromUser){
+                this.model.set('food',null);
+                this.model.set('foodUser',food);
+            } else {
+                this.model.set('foodUser',null);
+                this.model.set('food',food);
+            }
+
+            this.$('.unity').text(food.unity);
+            this.$('input[name=quantity]').focus();
         },
 
         calendarInitialize: function(){
@@ -84,31 +132,9 @@ define([
             this.$('input[name=createdAt]').focus();
         },
 
-        tabsToggleInitialize: function(){
-            console.log('module:eat:form:tabsToggleInitialize');
-
-            var self = this;
-            this.$('.tabs').change(function() {
-                self.tabsToggle(this);
-            });
-        },
-
-        tabsToggle: function(toggle){
-            console.log('module:eat:form:tabsToggle');
-
-            if($(toggle).find('.tab-weight').hasClass('active')){
-                this.$('.fat-container').hide();
-                this.$('.weight-container').show();
-            } else {
-                this.$('.weight-container').hide();
-                this.$('.fat-container').show();
-            }
-        },
-
         add: function(){
             console.log('module:eat:form:add');
 
-            this.template = tplForm;
             this.model = new Model();
             this.render();
             this.show();
@@ -127,15 +153,14 @@ define([
             console.log('module:eat:form:save');
 
             this.model.set({
-                weight: this.$('input[name=weight]').val(),
-                belly: this.$('input[name=belly]').val() || 0,
-                chest: this.$('input[name=chest]').val() || 0,
-                leg: this.$('input[name=leg]').val() || 0
+                quantity: this.$('input[name=quantity]').val()
             });
+
+            console.log('module:eat:form:save', this.model.toJSON());
 
             app.db.eat.create(this.model);
 
-            //this.model.save();
+            this.hide();
         }
     });
 

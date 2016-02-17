@@ -62,11 +62,12 @@ define([
         dashboard: function(id){
             console.log('core:router:dashboard', id);
 
-            alert(app.calcs.male.BMR(app.user.getWeight(),app.user.get('height'),app.user.get('birthyear')));
+            //alert(app.calcs.male.BMR(app.user.getWeight(),app.user.get('height'),app.user.get('birthyear')));
 
-            //require(['scripts/dashboard/initialize'], function(dashboard){
-            //    app.m.dashboard = dashboard;
-            //});
+            require(['scripts/dashboard/initialize'], function(dashboard){
+                app.m.dashboard = dashboard;
+                app.m.dashboard.initialize();
+            });
         },
 
         //foodUser: function(id){

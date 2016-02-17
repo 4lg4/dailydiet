@@ -19,14 +19,14 @@ define([
         template: _.template(tplModule),
 
         events: {
-            'click .btn-add-food-custom': 'addFoodCustom'
+            'click .btn-add-food-custom': 'addFoodCustom',
+            'click .btn-simulate': 'simulate'
         },
 
         initialize: function(){
             console.log('module:food:initialize');
 
             app.db.foodUser.on('add',this.addFoodCustomItem,this);
-
         },
 
         render: function(){
@@ -64,7 +64,15 @@ define([
         },
 
         addFoodCustom: function(){
+            console.log('module:food:addFoodCustom');
+
             app.m.food.formFoodCustom.add();
+        },
+
+        simulate: function(){
+            console.log('module:food:simulate');
+
+
         }
 
     });
