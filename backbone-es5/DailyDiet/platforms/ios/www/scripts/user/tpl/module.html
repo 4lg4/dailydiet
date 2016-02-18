@@ -1,0 +1,34 @@
+<div class="col-xs-12 col-sm-6 col-sm-offset-1 col-md-4 col-md-offset-2">
+    <div class="form-group">
+        <label>Name</label>
+        <input type="name" class="form-control" name="name" value="<%= name %>">
+    </div>
+    <div class="form-group">
+        <label>Email address</label>
+        <input type="email" class="form-control" name="email" value="<%= email %>">
+    </div>
+    <div class="form-group">
+        <label>Gender</label>
+        <div class="clearfix">
+            <div class="btn-group gender-radio" data-toggle="buttons">
+                <label class="btn btn-default gender-radio-male">
+                    <input type="radio" name="gender" autocomplete="off" value="male"> Male
+                </label>
+                <label class="btn btn-default gender-radio-female">
+                    <input type="radio" name="gender" autocomplete="off" value="female"> Female
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-xs-12 col-sm-6 col-md-4 ">
+    <div class="form-group">
+        <label>Birthyear</label>
+        <input type="number" class="form-control" name="birthyear" value="<%= birthyear %>" min="<%= yearMin %>" max="<%= yearMax %>">
+    </div>
+    <div class="form-group">
+        <label>Height (cm)</label>
+        <input type="number" class="form-control" name="height" value="<%= height %>">
+    </div>
+</div>

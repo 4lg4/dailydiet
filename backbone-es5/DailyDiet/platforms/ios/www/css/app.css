@@ -1,0 +1,28 @@
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+@import '../node_modules/bootstrap/dist/css/bootstrap-theme.min.css';
+/*@import '../node_modules/bootstrap/dist/css/bootstrap-reset.css';*/
+
+@import '../node_modules/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css';
+
+@import 'typeaheadjs.css';
+
+
+/* navbar menu fix */
+@media (max-width: 767px) {
+    .app-menu .visible-xs {
+        display: inline-block !important;
+    }
+}
+
+.form-footer {
+    margin-top: 20px;
+}
+.danger .dangerDayText {
+    font-weight: bold;
+}
+.warning .warningDayText {
+    font-weight: bold;
+}
+.clickable {
+    cursor: pointer;
+}
