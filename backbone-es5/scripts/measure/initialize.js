@@ -5,8 +5,8 @@
 
 define([
       'scripts/app'
-    , 'scripts/mesure/module'
-    , 'scripts/mesure/form'
+    , 'scripts/measure/module'
+    , 'scripts/measure/form'
 ],function(
       app
     , Module
@@ -15,14 +15,14 @@ define([
 
     return {
         initialize: function(){
-            console.log('mesure:initialize');
+            console.log('measure:initialize');
 
             this.module = new Module();
             app.ui.module.add(this.module.render().el);
 
             this.form = form;
 
-            app.menuActive('mesure');
+            app.menuActive('measure');
 
             return this.module;
         }

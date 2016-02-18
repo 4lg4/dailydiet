@@ -4,9 +4,9 @@
 
 define([
       'scripts/app'
-    , 'text!scripts/mesure/tpl/form.html'
-    , 'text!scripts/mesure/tpl/form-fast.html'
-    , 'scripts/mesure/db/model'
+    , 'text!scripts/measure/tpl/form.html'
+    , 'text!scripts/measure/tpl/form-fast.html'
+    , 'scripts/measure/db/model'
 ],function(
       app
     , tpl
@@ -26,14 +26,14 @@ define([
         },
 
         initialize: function(){
-            console.log('module:mesure:form:initialize');
+            console.log('module:measure:form:initialize');
 
             this.model = new Model();
             this.model.set('createdAt', app.moment().toISOString());
         },
 
         render: function(){
-            console.log('module:mesure:form:render');
+            console.log('module:measure:form:render');
 
             this.$el.html(this.template(this.model.toJSON()));
 
@@ -43,7 +43,7 @@ define([
         },
         
         show: function(){
-            console.log('module:mesure:form:render');
+            console.log('module:measure:form:render');
 
             if(this.modal){
                 this.modal.show();
@@ -51,7 +51,7 @@ define([
         },
 
         addFast: function(){
-            console.log('module:mesure:form:addFast');
+            console.log('module:measure:form:addFast');
 
             this.template = tplFormFast;
             this.model = new Model();
@@ -64,7 +64,7 @@ define([
         },
 
         calendarInitialize: function(){
-            console.log('module:mesure:form:calendarInitialize');
+            console.log('module:measure:form:calendarInitialize');
 
             var self = this;
 
@@ -79,13 +79,13 @@ define([
         },
 
         calendarClick: function(){
-            console.log('module:mesure:form:calendarClick');
+            console.log('module:measure:form:calendarClick');
 
             this.$('input[name=createdAt]').focus();
         },
 
         tabsToggleInitialize: function(){
-            console.log('module:mesure:form:tabsToggleInitialize');
+            console.log('module:measure:form:tabsToggleInitialize');
 
             var self = this;
             this.$('.tabs').change(function() {
@@ -94,7 +94,7 @@ define([
         },
 
         tabsToggle: function(toggle){
-            console.log('module:mesure:form:tabsToggle');
+            console.log('module:measure:form:tabsToggle');
 
             if($(toggle).find('.tab-weight').hasClass('active')){
                 this.$('.fat-container').hide();
@@ -106,7 +106,7 @@ define([
         },
 
         add: function(){
-            console.log('module:mesure:form:add');
+            console.log('module:measure:form:add');
 
             this.template = tplForm;
             this.model = new Model();
@@ -115,7 +115,7 @@ define([
         },
 
         edit: function(model){
-            console.log('module:mesure:form:edit');
+            console.log('module:measure:form:edit');
 
             this.template = tplForm;
             this.model = model;
@@ -124,7 +124,7 @@ define([
         },
 
         save: function(){
-            console.log('module:mesure:form:save');
+            console.log('module:measure:form:save');
 
             this.model.set({
                 weight: this.$('input[name=weight]').val(),
@@ -133,14 +133,14 @@ define([
                 leg: this.$('input[name=leg]').val() || 0
             });
 
-            app.db.mesure.create(this.model);
+            app.db.measure.create(this.model);
 
             //this.model.save();
         }
     });
 
     var modal = new app.ui.modal({
-        title:'Mesure'
+        title:'Measure'
     });
 
     var form = new Form();

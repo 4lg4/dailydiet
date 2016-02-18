@@ -4,7 +4,7 @@
 
 define([
     'scripts/app',
-    'text!scripts/mesure/tpl/list-item.html'
+    'text!scripts/measure/tpl/list-item.html'
 ],function(
     app,
     tplFood
@@ -21,7 +21,7 @@ define([
         },
 
         initialize: function(){
-            console.log('module:mesure:initialize');
+            console.log('module:measure:initialize');
 
             this.model.on('sync',this.render,this);
 
@@ -32,7 +32,7 @@ define([
         },
 
         render: function(){
-            console.log('module:mesure:render');
+            console.log('module:measure:render');
 
             this.$el.html(this.template(this.model.toJSON()));
 
@@ -40,8 +40,8 @@ define([
         },
 
         edit: function(){
-            console.log('module:mesure:show');
-            app.m.mesure.form.edit(this.model);
+            console.log('module:measure:show');
+            app.m.measure.form.edit(this.model);
         }
     });
 });

@@ -4,8 +4,8 @@
 
 define([
       'scripts/app'
-    , 'text!scripts/mesure/tpl/module.html'
-    , 'scripts/mesure/list-item'
+    , 'text!scripts/measure/tpl/module.html'
+    , 'scripts/measure/list-item'
 ],function(
       app
     , tplModule
@@ -21,14 +21,14 @@ define([
         },
 
         initialize: function(){
-            console.log('module:mesure:initialize');
+            console.log('module:measure:initialize');
 
-            app.db.mesure.on('add',this.addListItem,this);
+            app.db.measure.on('add',this.addListItem,this);
 
         },
 
         render: function(){
-            console.log('module:mesure:render');
+            console.log('module:measure:render');
 
             this.$el.html(this.template());
 
@@ -39,19 +39,19 @@ define([
 
 
         getList: function(){
-            console.log('module:mesure:getList');
+            console.log('module:measure:getList');
 
-            app.db.mesure.each(this.addListItem,this);
+            app.db.measure.each(this.addListItem,this);
         },
 
         addListItem: function(model){
-            console.log('module:mesure:addListItem');
+            console.log('module:measure:addListItem');
 
             this.$('.list').append(new ListItem({ model: model }).el);
         },
 
         addForm: function(){
-            app.m.mesure.form.add();
+            app.m.measure.form.add();
         }
 
     });

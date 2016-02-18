@@ -4,7 +4,7 @@
 
 
 define([
-    'scripts/mesure/db/model'
+    'scripts/measure/db/model'
 ],function(
     Model
 ) {
@@ -12,7 +12,7 @@ define([
 
     return Backbone.Collection.extend({
         model: Model,
-        localStorage: new Backbone.LocalStorage('DailyDiet-mesure')
+        localStorage: new Backbone.LocalStorage('DailyDiet-measure')
     });
 
 });
