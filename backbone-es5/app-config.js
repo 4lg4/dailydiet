@@ -18,6 +18,7 @@ require.config({
         datetimepicker: 'node_modules/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min',
         typeahead: 'node_modules/typeahead.js/dist/typeahead.jquery',
         bloodhound: 'node_modules/typeahead.js/dist/bloodhound.min',
+        //charts: 'scripts/core/charts/protovis.min',
 
         //shortcut paths
         //templates: '../templates',
@@ -72,6 +73,7 @@ require([
     , 'scripts/core/navbar'
     , 'scripts/core/modal'
     , 'typeahead'
+    //, 'charts'
 ],function(
       promisebluebird
     , $
@@ -87,6 +89,7 @@ require([
     , Navbar
     , Modal
     , typeahead
+    //, charts
 ){
 
     window.Promise = promisebluebird; // dont remove this
@@ -100,7 +103,7 @@ require([
     app.db = DB;
     app.user = app.db.user;
     _.each(app.db, function(db){
-        console.log('app-config:dbInitialize',db);
+        console.log('app-config:dbInitialize');
         if(db.localStorage) {
             db.fetch();
         }
@@ -126,8 +129,5 @@ require([
     };
 
     app.ui.modal = Modal;
-
-    console.log(app);
-
 
 });

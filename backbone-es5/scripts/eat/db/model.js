@@ -13,6 +13,7 @@ define([
         defaults: function() {
             return {
                 createdAt: moment().toISOString(),
+                createdAtDay: moment().format('YYYYMMDD'),
                 food: null,
                 foodUser: null,
                 quantity: null

@@ -21,7 +21,7 @@ define([
             'food/:id': 'food',			    // nao tirar dessa ordem
             'food/:id/:otherstuff': 'food',	// nao tirar dessa ordem
 
-            'userMesure': 'userMesure',
+            'userMeasure': 'userMeasure',
 
             'foodUser': 'foodUser',    // nao tirar dessa ordem
             'foodUser/:id': 'foodUser', // nao tirar dessa ordem
@@ -30,8 +30,8 @@ define([
             'user': 'user',					// nao tirar dessa ordem
             'user/:id': 'user',			    // nao tirar dessa ordem
 
-            'mesure': 'mesure',					// nao tirar dessa ordem
-            'mesure/:id': 'mesure',			    // nao tirar dessa ordem
+            'measure': 'measure',					// nao tirar dessa ordem
+            'measure/:id': 'measure',			    // nao tirar dessa ordem
 
             'eat': 'eat',					// nao tirar dessa ordem
             'eat/:id': 'eat'			    // nao tirar dessa ordem
@@ -104,28 +104,28 @@ define([
             });
         },
 
-        mesure: function(id){
-            console.log('core:router:mesure', id);
+        measure: function(id){
+            console.log('core:router:measure', id);
 
-            require(['scripts/mesure/initialize'], function(mesure){
-                app.m.mesure = mesure;
-                app.m.mesure.initialize(id);
+            require(['scripts/measure/initialize'], function(measure){
+                app.m.measure = measure;
+                app.m.measure.initialize(id);
             });
         },
 
-        mesureAddFast: function(id){
-            console.log('core:router:mesure', id);
+        measureAddFast: function(id){
+            console.log('core:router:measure', id);
 
-            require(['scripts/mesure/form'], function(form){
-                if(app.m.mesure){
-                    app.m.mesure.form = form;
+            require(['scripts/measure/form'], function(form){
+                if(app.m.measure){
+                    app.m.measure.form = form;
                 } else {
-                    app.m.mesure = {
+                    app.m.measure = {
                         form: form
                     };
                 }
 
-                app.m.mesure.form.addFast();
+                app.m.measure.form.addFast();
             });
         },
 

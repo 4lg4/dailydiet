@@ -20,10 +20,11 @@ define([
             'click .app-menu-dashboard': 'menu-dashboard',
             'click .app-menu-foodUser': 'menu-foodUser',
             'click .app-menu-eatAdd': 'menu-eatAdd',
-            'click .app-menu-userMesure': 'menu-userMesure',
+            'click .app-menu-userMeasure': 'menu-userMeasure',
             'click .app-menu-user': 'menu-user',
             'click .app-menu-food': 'menu-food',
-            'click .app-menu-mesure': 'menu-mesure'
+            'click .app-menu-measure': 'menu-measure',
+            'click .btn-iate': 'iate'
         },
 
         initialize: function(){
@@ -92,13 +93,13 @@ define([
             app.router.eatAddFast();
         },
 
-        'menu-userMesure': function(){
-            console.log('core:navbar:userMesure');
+        'menu-userMeasure': function(){
+            console.log('core:navbar:userMeasure');
 
             this.menuUnActive();
-            this.$('.app-menu-userMesure').addClass('active');
+            this.$('.app-menu-userMeasure').addClass('active');
 
-            app.router.mesureAddFast();
+            app.router.measureAddFast();
         },
 
         'menu-user': function(){
@@ -117,12 +118,12 @@ define([
             this.$('.app-menu-food').addClass('active');
         },
 
-        'menu-mesure': function(){
-            console.log('core:navbar:menuMesure');
+        'menu-measure': function(){
+            console.log('core:navbar:menuMeasure');
 
             this.menuUnActive();
             this.menuDropDownActive();
-            this.$('.app-menu-mesure').addClass('active');
+            this.$('.app-menu-measure').addClass('active');
         },
 
         'menu-eat': function(){
@@ -131,6 +132,15 @@ define([
             this.menuUnActive();
             this.menuDropDownActive();
             this.$('.app-menu-eat').addClass('active');
+        },
+
+
+
+
+        iate: function(){
+            console.log('module:dashboard:iate');
+
+            app.router.eatAddFast();
         }
 
 

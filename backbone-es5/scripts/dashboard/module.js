@@ -5,11 +5,13 @@
 define([
       'scripts/app'
     , 'text!scripts/dashboard/tpl/module.html'
-    , 'scripts/dashboard/item'
+    //, 'scripts/dashboard/weight-item'
+    , 'scripts/dashboard/eat-item'
 ],function(
       app
     , tplModule
-    , DashboardItem
+    //, WeightItem
+    , EatItem
 ){
 
 
@@ -25,6 +27,9 @@ define([
             console.log('module:dashboard:initialize');
 
             //app.db.dashboardUser.on('add',this.addDashboardCustomItem,this);
+
+            this.listenTo(app.db.eat,'sync',this.getDashboard,this);
+            this.listenTo(app.db.measure,'sync',this.getDashboard,this);
 
         },
 
@@ -47,31 +52,31 @@ define([
         measured: function(){
             console.log('module:dashboard:measured');
 
-            app.router.mesureAddFast();
+            app.router.measureAddFast();
         },
 
         getDashboard: function(){
             console.log('module:dashboard:getDashboard');
 
-            //app.db.dashboard.each(this.addDashboardItem,this);
-            //app.db.dashboardUser.each(this.addDashboardCustomItem,this);
+            this.$('.eat-list').empty();
+
+            //app.db.eat.each(this.addEatItem,this);
+            _.each(app.db.eat.dailySum(),this.addEatItem,this);
+            //app.db.measure.each(this.addWeightItem,this);
+            //app.db.measure.dailySum();
         },
 
-        addDashboardItem: function(model){
-            console.log('module:dashboard:addDashboardItem');
+        addEatItem: function(attr){
+            console.log('module:dashboard:addEatItem');
 
-            this.$('.dashboard-list').append(new DashboardItem({ model: model }).el);
+            this.$('.eat-list').append(new EatItem({ model: new Backbone.Model(attr) }).el);
         },
 
-        addDashboardCustomItem: function(model){
-            console.log('module:dashboard:addDashboardCustomItem');
-
-            this.$('.dashboard-custom-list').append(new DashboardCustomItem({ model: model }).el);
-        },
-
-        addDashboardCustom: function(){
-            app.m.dashboard.formDashboardCustom.add();
-        }
+        //addWeightItem: function(model){
+        //    console.log('module:dashboard:addWeightItem');
+        //
+        //    this.$('.weight-list').append(new WeightItem({ model: model }).el);
+        //},
 
     });
 });

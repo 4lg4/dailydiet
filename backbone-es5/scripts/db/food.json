@@ -28,8 +28,11 @@
   "5": {
     "name": "café sem açucar",
     "unity": "ml",
-    "quantity":100,
-    "calories":8
+    "quantity":1,
+    "calories":0.09,
+    "carbs":0.017,
+    "protein":0.001,
+    "fat":0.002
   },
   "6": {
     "name": "pão de queijo",
@@ -50,18 +53,42 @@
     "calories":127
   },
   "9": {
-    "name": "peito frango",
-    "unity": "un",
+    "name": "carne peito frango na chapa",
+    "unity": "g",
     "quantity":1,
-    "calories":170,
-    "protein":32
+    "calories":1.6,
+    "carbs":0,
+    "protein":0.30,
+    "fat":0.012,
+    "eg": [
+      {
+        "name": "filé pequeno",
+        "quantity": "124"
+      }, {
+        "name": "filé pequeno",
+        "quantity": "220"
+      }, {
+        "name": "filé grande",
+        "quantity": "280"
+      }
+    ]
   },
   "10": {
-    "name": "ovo frito",
+    "name": "ovo cozido",
     "unity": "un",
     "quantity":1,
-    "calories":110,
-    "protein":6
+    "calories":108.5,
+    "carbs":0.77,
+    "protein":9.1,
+    "fat":7.7,
+    "preciseMeasure": {
+      "unity": "g",
+      "quantity":1,
+      "calories":1.55,
+      "carbs":0.011,
+      "protein":0.13,
+      "fat":0.11
+    }
   },
   "11": {
     "name": "salmão",
@@ -74,7 +101,7 @@
     "name": "iogurte integral mel",
     "unity": "g",
     "quantity": 1,
-    "calories": 1.1,
+    "calories": 1.12,
     "carbs": 0.17,
     "protein": 0.032,
     "fat": 0.031
@@ -96,6 +123,68 @@
     "carbs": 0.17,
     "protein": 0.02,
     "fat": 0.001
+  },
+  "15": {
+    "name": "ovo frito",
+    "unity": "un",
+    "quantity":1,
+    "calories":168,
+    "carbs":0.77,
+    "protein":9.1,
+    "fat":7.7,
+    "preciseMeasure": {
+      "unity": "g",
+      "quantity":1,
+      "calories":2.4,
+      "carbs":0.011,
+      "protein":0.13,
+      "fat":0.11
+    }
+  },
+  "16": {
+    "name": "melancia",
+    "unity": "g",
+    "quantity": 1,
+    "calories": 0.3,
+    "carbs": 0.08,
+    "protein": 0.006,
+    "fat": 0.002
+  },
+  "17": {
+    "name": "carne bovina magra bife na chapa",
+    "unity": "g",
+    "quantity": 1,
+    "calories": 2.4,
+    "carbs": 0,
+    "protein": 0.26,
+    "fat": 0.12
+  },
+  "18": {
+    "name": "suco de limão",
+    "unity": "ml",
+    "quantity": 1,
+    "calories": 0.29,
+    "carbs": 0.09,
+    "protein": 0.011,
+    "fat": 0.003
+  },
+  "19": {
+    "name": "leite semi-desnatado",
+    "unity": "ml",
+    "quantity": 1,
+    "calories": 0.39,
+    "carbs": 0.045,
+    "protein": 0.03,
+    "fat": 0.01
+  },
+  "20": {
+    "name": "leite integral",
+    "unity": "ml",
+    "quantity": 1,
+    "calories": 0.57,
+    "carbs": 0.045,
+    "protein": 0.03,
+    "fat": 0.03
   }
 
 }

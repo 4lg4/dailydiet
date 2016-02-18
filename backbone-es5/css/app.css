@@ -13,3 +13,16 @@
         display: inline-block !important;
     }
 }
+
+.form-footer {
+    margin-top: 20px;
+}
+.danger .dangerDayText {
+    font-weight: bold;
+}
+.warning .warningDayText {
+    font-weight: bold;
+}
+.clickable {
+    cursor: pointer;
+}

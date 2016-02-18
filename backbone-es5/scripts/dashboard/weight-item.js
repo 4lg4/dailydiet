@@ -4,17 +4,17 @@
 
 define([
     'scripts/app',
-    'text!scripts/dashboard/tpl/item.html'
+    'text!scripts/dashboard/tpl/weight-item.html'
 ],function(
     app,
-    tplDashboard
+    tplItem
 ){
 
 
     return Backbone.View.extend({
         tagName: 'tr',
 
-        template: _.template(tplDashboard),
+        template: _.template(tplItem),
 
         events: {
             //'click .btn-save': 'save',
@@ -24,6 +24,8 @@ define([
 
         initialize: function(){
             console.log('module:user:initialize');
+
+            this.model.set('createdAtShow',app.moment(this.model.get('createdAt')).format('ll'));
 
             this.render();
 

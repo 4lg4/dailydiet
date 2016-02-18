@@ -22,14 +22,15 @@ define([
 
         events: {
             'click .btn-save': 'save',
+            'click .btn-delete': 'delete',
+            'click .btn-delete-confirm': 'deleteConfirm',
+            'click .btn-delete-cancel': 'deleteCancel',
+
             'click .btn-calendar': 'calendarClick'
         },
 
         initialize: function(){
             console.log('module:eat:form:initialize');
-
-            this.model = new Model();
-            this.model.set('createdAt', app.moment().toISOString());
         },
 
         render: function(){
@@ -66,6 +67,23 @@ define([
             this.model = new Model();
             this.render();
 
+            if(this.model.isNew()){
+                this.deleteHide();
+            }
+
+            this.show();
+        },
+
+        add: function(){
+            console.log('module:eat:form:add');
+
+            this.model = new Model();
+            this.render();
+
+            if(this.model.isNew()){
+                this.deleteHide();
+            }
+
             this.show();
         },
 
@@ -97,14 +115,18 @@ define([
         },
 
         foodListSelect: function(evt,food){
-            console.log('module:eat:form:foodListSelect', food);
+            console.log('module:eat:form:foodListSelect');
 
             if(food.fromUser){
-                this.model.set('food',null);
-                this.model.set('foodUser',food);
+                this.model.set({
+                    food : null,
+                    foodUser: food
+                });
             } else {
-                this.model.set('foodUser',null);
-                this.model.set('food',food);
+                this.model.set({
+                    food : food,
+                    foodUser: null
+                });
             }
 
             this.$('.unity').text(food.unity);
@@ -116,13 +138,16 @@ define([
 
             var self = this;
 
-            this.$('input[name=createdAt]').datetimepicker({
-                //format:'MM/DD/YYYY',
-                defaultDate: app.moment(this.model.get('createdAt'))
+            this.createdAt = this.$('input[name=createdAt]').datetimepicker({
+                defaultDate: app.moment(this.model.get('createdAt')),
+                sideBySide: true
             });
 
             this.$('input[name=createdAt]').on('dp.change', function(e){
                 self.model.set('createdAt', e.date.toISOString());
+                self.model.set('createdAtDay', e.date.format('YYYYMMDD'));
+
+                self.createdAt.data().DateTimePicker.hide();
             });
         },
 
@@ -130,14 +155,6 @@ define([
             console.log('module:eat:form:calendarClick');
 
             this.$('input[name=createdAt]').focus();
-        },
-
-        add: function(){
-            console.log('module:eat:form:add');
-
-            this.model = new Model();
-            this.render();
-            this.show();
         },
 
         edit: function(model){
@@ -156,10 +173,33 @@ define([
                 quantity: this.$('input[name=quantity]').val()
             });
 
-            console.log('module:eat:form:save', this.model.toJSON());
+            if(this.model.isNew()) {
+                app.db.eat.create(this.model);
+            }
 
-            app.db.eat.create(this.model);
+            this.model.save();
+            this.hide();
+        },
 
+        deleteHide: function () {
+            console.log('module:eat:form:deleteHide');
+
+            this.$('.btn-delete').hide();
+            this.$('.btn-delete-confirm-container').hide();
+        },
+
+        delete: function () {
+            console.log('module:eat:form:save');
+
+            this.$('.btn-delete').hide();
+            this.$('.btn-save').hide();
+            this.$('.btn-delete-confirm-container').show();
+        },
+
+        deleteConfirm: function () {
+            console.log('module:eat:form:deleteConfirm',this.model);
+
+            this.model.destroy();
             this.hide();
         }
     });
@@ -171,7 +211,7 @@ define([
     var form = new Form();
         form.modal = modal;
 
-    modal.addBody(form.render().el);
+    modal.addBody(form.el);
 
     return form;
     //return {};

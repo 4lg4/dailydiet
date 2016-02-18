@@ -1,10 +1,17 @@
 <td><%= createdAtShow %></td>
 <td><%= food_name %></td>
-<td>
+<td class="text-right">
     <%= quantity %>
     <%= food_unity %>
+</td>
+<td class="text-right">
+    <div class="pull-left" style="width: 50%;">
+        <%= food_caloriesTotal %>
+    </div>
 
     <div class="btn btn-primary btn-eye pull-right">
         <i class="glyphicon glyphicon-eye-open"></i>
     </div>
 </td>
+
+

@@ -35,7 +35,7 @@ define([
         },
 
         add: function(el){
-            console.log('core:module:add',this.$el,el);
+            console.log('core:module:add');
 
             this.$el.html(el);
         }

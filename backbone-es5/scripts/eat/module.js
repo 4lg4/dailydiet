@@ -41,7 +41,7 @@ define([
         getList: function(){
             console.log('module:eat:getList');
 
-            app.db.eat.each(this.addListItem,this);
+            _.each(app.db.eat.sortBy('createdAt').reverse(),this.addListItem,this);
         },
 
         addListItem: function(model){

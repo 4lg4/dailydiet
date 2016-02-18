@@ -21,7 +21,14 @@ define([
         },
 
         initialize: function(){
-            console.log('module:fooduser:initialize');
+            console.log('module:fooduser:initialize',this.model.toJSON());
+
+            this.model.set({
+                caloriesToShow: (parseFloat(this.model.get('calories')) || 0).toFixed(2),
+                carbsToShow: (parseFloat(this.model.get('carbs')) || 0).toFixed(2),
+                proteinToShow: (parseFloat(this.model.get('protein')) || 0).toFixed(2),
+                fatToShow: (parseFloat(this.model.get('fat')) || 0).toFixed(2)
+            });
 
             this.model.on('change',this.render,this);
 
