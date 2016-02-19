@@ -1,88 +1,69 @@
 <nav class="navbar navbar-default">
     <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
+        <div class="col-xs-3 col-sm-2 col-md-1 pull-left">
+            <!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">-->
+                <!--<span class="sr-only">Toggle navigation</span>-->
+                <!--<span class="icon-bar"></span>-->
+                <!--<span class="icon-bar"></span>-->
+                <!--<span class="icon-bar"></span>-->
+            <!--</button>-->
             <a class="navbar-brand" href="#dashboard">DD</a>
         </div>
 
-        <!--<div class="col-xs-2 col-xs-offset-8" style="margin-top: 8px; position: absolute;">-->
-            <div class="btn btn-success navbar-btn btn-iate col-xs-1 col-xs-offset-9">
-                <i class="glyphicon glyphicon-cutlery visible-xs"></i>
-                <i class="glyphicon glyphicon-cutlery pull-left hidden-xs"></i>
-                <span class="hidden-xs">i ate</span>
-            </div>
-        <!--</div>-->
 
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                <li class="app-menu app-menu-dashboard">
-                    <a href="#dashboard" class="">
-                        <i class="glyphicon glyphicon-blackboard" style="display: inline-block;"></i>
-                        <span class="visible-xs" style="margin-left: 15px;">Dashboard</span>
-                    </a>
-                </li>
-                <li class="app-menu app-menu-eatAdd visible-xs">
-                    <a style="cursor: pointer;">
-                        <i class="glyphicon glyphicon-cutlery" style="display: inline-block;"></i>
-                        <span class="visible-xs" style="margin-left: 15px;">I ate</span>
-                    </a>
-                </li>
-                <li class="app-menu app-menu-userExercise visible-xs">
-                    <a href="#userExercise/add" class="">
-                        <i class="glyphicon glyphicon-fire" style="display: inline-block;"></i>
-                        <span class="visible-xs" style="margin-left: 15px;">Worked out</span>
-                    </a>
-                </li>
-                <li class="app-menu app-menu-userMeasure visible-xs">
-                    <a style="cursor: pointer;" class="">
-                        <i class="glyphicon glyphicon-scale" style="display: inline-block;"></i>
-                        <span class="visible-xs" style="margin-left: 15px;">Measured</span>
-                    </a>
-                </li>
-                <li class="dropdown app-menu app-menu-dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                        <i class="glyphicon glyphicon-cog"></i> <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li class="app-menu app-menu-eat">
-                            <a href="#eat">
-                                <i class="glyphicon glyphicon-cutlery" style="margin-left: -10px; margin-right: 10px;"></i>
-                                Eat list
-                            </a>
-                        </li>
+        <div class="col-xs-3 col-sm-1 pull-right" style="padding-top: 5px;">
+            <div class="btn-group">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="glyphicon glyphicon-cog"></i> <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-right">
+                    <li class="app-menu app-menu-dashboard">
+                        <a href="#dashboard" class="">
+                            <i class="glyphicon glyphicon-cutlery" style="margin-left: -10px; margin-right: 10px;"></i>
+                            Dashboard
+                        </a>
+                    </li>
 
-                        <li class="app-menu app-menu-measure">
-                            <a href="#measure">
-                                <i class="glyphicon glyphicon-scale" style="margin-left: -10px; margin-right: 10px;"></i>
-                                Measure list
-                            </a>
-                        </li>
+                    <li class="app-menu app-menu-eat">
+                        <a href="#eat">
+                            <i class="glyphicon glyphicon-cutlery" style="margin-left: -10px; margin-right: 10px;"></i>
+                            Eat list
+                        </a>
+                    </li>
 
-                        <li class="app-menu app-menu-food">
-                            <a href="#food">
-                                <i class="glyphicon glyphicon-apple" style="margin-left: -10px; margin-right: 10px;"></i>
-                                Food list
-                            </a>
-                        </li>
+                    <li class="app-menu app-menu-measure">
+                        <a href="#measure">
+                            <i class="glyphicon glyphicon-scale" style="margin-left: -10px; margin-right: 10px;"></i>
+                            Measure list
+                        </a>
+                    </li>
 
-                        <li role="separator" class="divider"></li>
+                    <li class="app-menu app-menu-food">
+                        <a href="#food">
+                            <i class="glyphicon glyphicon-apple" style="margin-left: -10px; margin-right: 10px;"></i>
+                            Food list
+                        </a>
+                    </li>
 
-                        <li class="app-menu app-menu-user">
-                            <a href="#user">
-                                <i class="glyphicon glyphicon-user" style="margin-left: -10px; margin-right: 10px;"></i>
-                                Profile
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </div><!-- /.navbar-collapse -->
+                    <li role="separator" class="divider"></li>
+
+                    <li class="app-menu app-menu-user">
+                        <a href="#user">
+                            <i class="glyphicon glyphicon-user" style="margin-left: -10px; margin-right: 10px;"></i>
+                            Profile
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            </div>
+
+        <div class="col-xs-5 col-sm-3 col-md-2 col-lg-2 pull-right" style="padding-top: 5px;">
+            <div class="btn btn-success btn-iate col-xs-12">
+                <i class="glyphicon glyphicon-cutlery pull-left"></i>
+                <span>i ate</span>
+            </div>
+        </div>
+
     </div><!-- /.container-fluid -->
 </nav>

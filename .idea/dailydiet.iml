@@ -3,6 +3,7 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/angular2/node_modules" />
+      <excludeFolder url="file://$MODULE_DIR$/backbone-es5/DailyDiet/platforms" />
       <excludeFolder url="file://$MODULE_DIR$/backbone/node_modules" />
     </content>
     <orderEntry type="inheritedJdk" />

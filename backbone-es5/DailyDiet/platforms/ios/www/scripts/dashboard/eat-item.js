@@ -28,9 +28,9 @@ define([
 
             this.model.set('dateShow',app.moment(this.model.get('date')).format('ll'));
 
-            this.model.set('dangerDay','');
+            this.model.set('dangerCalories','');
             if(parseFloat(this.model.get('calories')) > parseFloat(this.model.get('bmr'))){
-                this.model.set('dangerDay','danger');
+                this.model.set('dangerCalories','dangerCalories');
             }
 
             // color control for protein on dashboard
@@ -53,14 +53,14 @@ define([
                 ) {
                     this.model.set({
                         warningProtein: null,
-                        dangerProtein: 'danger'
+                        dangerProtein: 'dangerProtein'
                     });
                 } else if (
                        (protein >= proteinIntakeMin && protein < proteinIntake)
                     || (protein <= proteinIntakeMax && protein > proteinIntake)
                 ) {
                     this.model.set({
-                        warningProtein: 'warning',
+                        warningProtein: 'warningProtein',
                         dangerProtein: null
                     });
                 }

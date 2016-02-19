@@ -1,10 +1,50 @@
-<td class="<%= dangerDay %>"><%= dateShow %></td>
-<td class="<%= dangerDay %>">
-    <%= weight %>
-    <i class="glyphicon glyphicon-chevron-down text-success weight-down" style="display: none;"></i>
-    <i class="glyphicon glyphicon-chevron-up text-danger weight-up" style="display: none;"></i>
+<td class="list-item">
+    <div class="row">
+        <div class="col-xs-12 list-item-header" style="">
+            <div class="col-xs-6 col-sm-8 col-md-9">
+                <i class="glyphicon glyphicon-scale"></i>
+                <%= weight %>
+                <i class="glyphicon glyphicon-chevron-down text-success weight-down" style="display: none;"></i>
+                <i class="glyphicon glyphicon-chevron-up text-danger weight-up" style="display: none;"></i>
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-3 text-right">
+                <i class="glyphicon glyphicon-calendar"></i>
+                <%= dateShow %>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="col-xs-7 col-sm-4 col-md-3 <%= dangerCalories %>">
+                <div class="col-xs-12">
+                    <h5><strong>calories</strong></h5>
+                </div>
+                <div class="col-xs-12">
+                    <%= bmr %> / <span class="dangerDayText"><%= calories %></span>
+                </div>
+            </div>
+            <div class="col-xs-5 col-sm-2  col-md-3">
+                <div class="col-xs-12">
+                    <h5><strong>carbs</strong></h5>
+                </div>
+                <div class="col-xs-12">
+                    <%= carbs %>
+                </div>
+            </div>
+            <div class="col-xs-7 col-sm-4 col-md-3 <%= dangerProtein %> <%= warningProtein %>">
+                <div class="col-xs-12">
+                    <h5><strong>protein</strong></h5>
+                </div>
+                <div class="col-xs-12">
+                    <%= proteinIntake %> / <span class="dangerDayText warningDayText"><%= protein %></span>
+                </div>
+            </div>
+            <div class="col-xs-5 col-sm-2  col-md-3">
+                <div class="col-xs-12">
+                    <h5><strong>fat</strong></h5>
+                </div>
+                <div class="col-xs-12">
+                    <%= fat %>
+                </div>
+            </div>
+        </div>
+    </div>
 </td>
-<td class="<%= dangerDay %>"><%= bmr %> / <span class="dangerDayText"><%= calories %></span></td>
-<td class="<%= dangerDay %>"><%= carbs %></td>
-<td class="<%= dangerDay %> <%= dangerProtein %> <%= warningProtein %>"><%= proteinIntake %> / <span class="dangerDayText warningDayText"><%= protein %></span></td>
-<td class="<%= dangerDay %>"><%= fat %></td>

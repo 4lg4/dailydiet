@@ -21,7 +21,7 @@ define([
         },
 
         initialize: function(){
-            console.log('module:eat:initialize');
+            console.log('module:eat:list-item:initialize');
 
             this.model.on('change',this.render,this);
             this.model.on('remove',this.remove,this);
@@ -30,6 +30,7 @@ define([
         },
 
         beforeRenderFixModel: function(){
+            console.log('module:eat:list-item:beforeRenderFixModel');
             this.model.set('createdAtShow',app.moment(this.model.get('createdAt')).format('lll'));
 
             var food = (this.model.get('food')) ? app.db.food.findWhere({id: this.model.get('food').id }) : app.db.foodUser.findWhere({id: this.model.get('foodUser').id });
@@ -44,7 +45,7 @@ define([
         },
 
         render: function(){
-            console.log('module:eat:render');
+            console.log('module:eat:list-item:render');
 
             this.beforeRenderFixModel();
 
@@ -54,7 +55,7 @@ define([
         },
 
         edit: function(){
-            console.log('module:eat:show');
+            console.log('module:eat:list-item:show');
             app.m.eat.form.edit(this.model);
         }
     });

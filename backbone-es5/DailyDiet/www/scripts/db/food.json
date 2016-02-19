@@ -194,6 +194,33 @@
     "carbs": 0.12,
     "protein": 0.14,
     "fat": 0.66
+  },
+  "22": {
+    "name": "queijo",
+    "unity": "g",
+    "quantity": 1,
+    "calories": 4.02,
+    "carbs": 0.013,
+    "protein": 0.25,
+    "fat": 0.33
+  },
+  "23": {
+    "name": "presunto gordo",
+    "unity": "g",
+    "quantity": 1,
+    "calories": 0.875,
+    "carbs": 0.0075,
+    "protein": 0.14,
+    "fat": 0.0325
+  },
+  "24": {
+    "name": "cerveja",
+    "unity": "ml",
+    "quantity": 1,
+    "calories": 0.43,
+    "carbs": 0.036,
+    "protein": 0.005,
+    "fat": 0
   }
 
 }
