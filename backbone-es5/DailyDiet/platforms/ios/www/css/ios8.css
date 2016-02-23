@@ -684,7 +684,9 @@ to {
 }
 @-o-keyframes sideWays {
   0% {
-    margin-left:0px;
+    margin-left: 0px;
   }
   100% {
-    margin-left:50px;
+    margin-left: 50px;
+  }
+}

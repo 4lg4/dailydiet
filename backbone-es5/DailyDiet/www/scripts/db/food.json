@@ -8,22 +8,42 @@
   },
   "2": {
     "name": "banana prata",
-    "unity": "un",
+    "unity": "g",
     "quantity":1,
-    "calories":100
+    "calories":0.89,
+    "carbs":0.23,
+    "protein":0.011,
+    "fat":0.003,
+    "eg": [
+      {
+        "name": "pequena",
+        "quantity": "100"
+      }, {
+        "name": "média",
+        "quantity": "150"
+      }, {
+        "name": "grande",
+        "quantity": "230"
+      }
+    ]
   },
   "3": {
-    "name": "iogurte mamão",
+    "name": "iogurte integral mamão",
     "unity": "g",
-    "quantity":100,
-    "calories":111,
-    "protein":2
+    "quantity":1,
+    "calories":1.11,
+    "carbs":0.175,
+    "protein":0.031,
+    "fat":0.031
   },
   "4": {
     "name": "batata doce",
     "unity": "g",
     "quantity":100,
-    "calories":116
+    "calories":116,
+    "carbs":0,
+    "protein":0,
+    "fat":0
   },
   "5": {
     "name": "café sem açucar",
@@ -47,10 +67,19 @@
     "calories":127
   },
   "8": {
-    "name": "pão francês",
-    "unity": "un",
-    "quantity":1,
-    "calories":127
+      "name": "pão francês",
+      "unity": "g",
+      "quantity":1,
+      "calories":2.8,
+      "carbs":0.5066,
+      "protein":0.0946,
+      "fat":0.0396,
+      "eg": [
+        {
+          "name": "médio",
+          "quantity": "50"
+        }
+      ]
   },
   "9": {
     "name": "carne peito frango na chapa",
@@ -230,6 +259,78 @@
     "carbs": 0.82,
     "protein": 0.003,
     "fat": 0
+  },
+  "26": {
+    "name": "chocolate",
+    "unity": "g",
+    "quantity": 1,
+    "calories": 5.46,
+    "carbs": 0.61,
+    "protein": 0.049,
+    "fat": 0.31
+  },
+  "27": {
+    "name": "atum",
+    "unity": "g",
+    "quantity": 1,
+    "calories": 1.94,
+    "carbs": 0,
+    "protein": 0.2824,
+    "fat": 0.0824
+  },
+  "28": {
+    "name": "pizza massa",
+    "unity": "g",
+    "quantity": 1,
+    "calories": 3.325,
+    "carbs": 0.575,
+    "protein": 0.09,
+    "fat": 0.075
+  },
+  "29": {
+    "name": "cachorro quente",
+    "unity": "g",
+    "quantity": 1,
+    "calories": 2.9,
+    "carbs": 0.042,
+    "protein": 0.1,
+    "fat": 0.26
+  },
+  "30": {
+    "name": "refri",
+    "unity": "ml",
+    "quantity": 1,
+    "calories": 0.425,
+    "carbs": 0.11,
+    "protein": 0,
+    "fat": 0
+  },
+  "31": {
+    "name": "bolo de chocolate",
+    "unity": "g",
+    "quantity": 1,
+    "calories": 3.71,
+    "carbs": 0.53,
+    "protein": 0.05,
+    "fat": 0.15
+  },
+  "32": {
+    "name": "maionese caseira",
+    "unity": "g",
+    "quantity": 1,
+    "calories": 6.866,
+    "carbs": 0.0168,
+    "protein": 0.0438,
+    "fat": 0.747
+  },
+  "33": {
+    "name": "iogurte integral ameixa",
+    "unity": "g",
+    "quantity":1,
+    "calories":1.16,
+    "carbs":0.19,
+    "protein":0.0305,
+    "fat":0.031
   }
 
 }

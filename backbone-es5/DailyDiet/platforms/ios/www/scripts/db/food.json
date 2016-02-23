@@ -221,6 +221,15 @@
     "carbs": 0.036,
     "protein": 0.005,
     "fat": 0
+  },
+  "25": {
+    "name": "mel",
+    "unity": "ml",
+    "quantity": 1,
+    "calories": 3.04,
+    "carbs": 0.82,
+    "protein": 0.003,
+    "fat": 0
   }
 
 }
