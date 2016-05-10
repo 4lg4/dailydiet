@@ -16,6 +16,14 @@
     }
 }
 
+*, *:focus, *:active, *:hover  {
+    outline: none !important;
+}
+
+.app-module {
+    overflow-x: hidden;
+}
+
 .form-footer {
     margin-top: 20px;
 }
@@ -48,6 +56,25 @@
 }
 
 
+
+.btn-white {
+    background-color: #fff;
+    color: #666;
+}
+.btn-white:hover, .btn-white:focus {
+    color: #333;
+}
+.btn-white:active {
+    box-shadow: none;
+}
+
+.btn-default {
+    background-color: #465A70;
+}
+
+.bg-white {
+    background-color: #fff;
+}
 
 /* ios */
 .navbar.navbar-default {

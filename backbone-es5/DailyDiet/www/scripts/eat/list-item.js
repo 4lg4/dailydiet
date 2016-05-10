@@ -33,7 +33,13 @@ define([
             console.log('module:eat:list-item:beforeRenderFixModel');
             this.model.set('createdAtShow',app.moment(this.model.get('createdAt')).format('lll'));
 
-            var food = (this.model.get('food')) ? app.db.food.findWhere({id: this.model.get('food').id }) : app.db.foodUser.findWhere({id: this.model.get('foodUser').id });
+            var food = new Backbone.Model();
+
+            if(this.model.get('food')) {
+                food = app.db.food.findWhere({id: this.model.get('food').id});
+            } else if(this.model.get('foodUser')) {
+                food = app.db.foodUser.findWhere({id: this.model.get('foodUser').id});
+            }
 
             this.model.set({
                 food_id: food.get('id'),

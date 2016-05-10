@@ -6,11 +6,12 @@
 define([
       'scripts/app'
     , 'scripts/eat/db/model'
+    , 'scripts/food/db/model'
 ],function(
       app
     , Model
+    , ModelFood
 ) {
-
 
     return Backbone.Collection.extend({
         model: Model,
@@ -37,15 +38,22 @@ define([
                 ,   carbs = 0
                 ,   protein = 0
                 ,   fat = 0
-                ,   day = '';
+                ,   day = ''
+                ,   pound = 0;
 
                 _.each(item, function(i){
-                    var food = (i.get('food')) ? app.db.food.findWhere({id: i.get('food').id }) : app.db.foodUser.findWhere({id: i.get('foodUser').id });
+                
+                    if(!i.get('food') && !i.get('foodUser')){
+                        food = new ModelFood();
+                    } else {
+                        food = (i.get('food')) ? app.db.food.findWhere({id: i.get('food').id }) : app.db.foodUser.findWhere({id: i.get('foodUser').id });
+                    }
 
                     calories += food.get('calories') * i.get('quantity');
                     carbs += food.get('carbs') * i.get('quantity');
                     protein += food.get('protein') * i.get('quantity');
                     fat += food.get('fat') * i.get('quantity');
+                    pound += parseFloat(i.get('quantity'));
 
                     day = i.get('createdAt');
 
@@ -60,7 +68,8 @@ define([
                     fat: fat.toFixed(2),
                     bmr: app.user.getBMR(day),
                     weight: app.user.getWeight(day),
-                    proteinIntake: app.user.getProteinIntake(day).toFixed(2)
+                    proteinIntake: app.user.getProteinIntake(day).toFixed(2),
+                    pound: pound.toFixed(2)
                 };
             });
 

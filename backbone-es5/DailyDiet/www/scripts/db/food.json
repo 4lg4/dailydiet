@@ -7,7 +7,7 @@
     "protein":4
   },
   "2": {
-    "name": "banana prata",
+    "name": "banana",
     "unity": "g",
     "quantity":1,
     "calories":0.89,
@@ -39,11 +39,11 @@
   "4": {
     "name": "batata doce",
     "unity": "g",
-    "quantity":100,
-    "calories":116,
-    "carbs":0,
-    "protein":0,
-    "fat":0
+    "quantity":1,
+    "calories":0.86,
+    "carbs":0.2,
+    "protein":0.016,
+    "fat":0.001
   },
   "5": {
     "name": "café sem açucar",
@@ -57,14 +57,20 @@
   "6": {
     "name": "pão de queijo",
     "unity": "g",
-    "quantity":25,
-    "calories":75
+    "quantity":1,
+    "calories":2.99,
+    "carbs":0.32,
+    "protein":0.15,
+    "fat":0.13
   },
   "7": {
     "name": "wafel holandês",
     "unity": "un",
     "quantity":1,
-    "calories":127
+    "calories":127,
+    "carbs":0,
+    "protein":0,
+    "fat":0
   },
   "8": {
       "name": "pão francês",
@@ -122,9 +128,11 @@
   "11": {
     "name": "salmão",
     "unity": "g",
-    "quantity":100,
-    "calories":170,
-    "protein":19
+    "quantity":1,
+    "calories":2.08,
+    "carbs":0,
+    "protein":0.2,
+    "fat":0.13
   },
   "12": {
     "name": "iogurte integral mel",
@@ -297,7 +305,7 @@
     "fat": 0.26
   },
   "30": {
-    "name": "refri",
+    "name": "refri / energetico / cocacola / guarana",
     "unity": "ml",
     "quantity": 1,
     "calories": 0.425,
@@ -331,6 +339,268 @@
     "carbs":0.19,
     "protein":0.0305,
     "fat":0.031
+  },
+  "34": {
+    "name": "massa macarrão",
+    "unity": "g",
+    "quantity":1,
+    "calories":3.71,
+    "carbs":0.75,
+    "protein":0.13,
+    "fat":0.015
+  },
+  "35": {
+    "name": "molho carbonara",
+    "unity": "g",
+    "quantity":1,
+    "calories":1.8675,
+    "carbs":0.02933,
+    "protein":0.066,
+    "fat":0.15491
+  },
+  "36": {
+    "name": "molho tomate",
+    "unity": "g",
+    "quantity":1,
+    "calories":0.3,
+    "carbs":0.08,
+    "protein":0.013,
+    "fat":0.002
+  },
+  "37": {
+    "name": "suco uva",
+    "unity": "ml",
+    "quantity":1,
+    "calories":0.705,
+    "carbs":0.165,
+    "protein":0,
+    "fat":0
+  },
+  "38": {
+    "name": "tapioca",
+    "unity": "g",
+    "quantity":1,
+    "calories":3.3,
+    "carbs":0.812,
+    "protein":0.005,
+    "fat":0
+  },
+  "39": {
+    "name": "pizza rustica",
+    "unity": "g",
+    "quantity":1,
+    "calories":2.66,
+    "carbs":0.33,
+    "protein":0.11,
+    "fat":0.1
+  },
+  "40": {
+    "name": "sorvete",
+    "unity": "g",
+    "quantity":1,
+    "calories":2.07,
+    "carbs":0.24,
+    "protein":0.035,
+    "fat":0.11
+  },
+  "41": {
+    "name": "maça",
+    "unity": "g",
+    "quantity":1,
+    "calories":0.52,
+    "carbs":0.14,
+    "protein":0.003,
+    "fat":0.002
+  },
+  "42": {
+    "name": "carne porco assada, chapa",
+    "unity": "g",
+    "quantity":1,
+    "calories":2.42,
+    "carbs":0,
+    "protein":0.27,
+    "fat":0.14
+  },
+  "43": {
+    "name": "feijão",
+    "unity": "g",
+    "quantity":1,
+    "calories":0.77,
+    "carbs":0.14,
+    "protein":0.05,
+    "fat":0.01
+  },
+  "44": {
+    "name": "café COM açucar",
+    "unity": "ml",
+    "quantity":1,
+    "calories":0.854,
+    "carbs":0.2,
+    "protein":0.001,
+    "fat":0.002
+  },
+  "45": {
+    "name": "refri ZERO / energetico / cocacola / guarana",
+    "unity": "ml",
+    "quantity": 1,
+    "calories": 0.0025,
+    "carbs": 0,
+    "protein": 0,
+    "fat": 0
+  },
+  "46": {
+    "name": "achocolatado com leite / nescau / toddy",
+    "unity": "ml",
+    "quantity": 1,
+    "calories": 0.83,
+    "carbs": 0.1,
+    "protein": 0.032,
+    "fat": 0.034
+  },
+  "47": {
+    "name": "vinho seco",
+    "unity": "ml",
+    "quantity": 1,
+    "calories": 0.72,
+    "carbs": 0.017,
+    "protein": 0.002,
+    "fat": 0
+  },
+  "48": {
+    "name": "vinho suave",
+    "unity": "ml",
+    "quantity":1,
+    "calories":0.85,
+    "carbs":0.165,
+    "protein":0.002,
+    "fat":0
+  },
+  "50": {
+    "name": "milho verde",
+    "unity": "g",
+    "quantity":1,
+    "calories":3.65,
+    "carbs":0.74,
+    "protein":0.09,
+    "fat":0.047,
+    "eg": [
+      {
+        "name": "médio",
+        "quantity": "30"
+      }
+    ]
+  },
+  "51": {
+    "name": "pão sirio, pita",
+    "unity": "g",
+    "quantity":1,
+    "calories":2.75,
+    "carbs":0.56,
+    "protein":0.09,
+    "fat":0.012,
+    "eg": [
+      {
+        "name": "médio",
+        "quantity": "45"
+      }
+    ]
+  },
+  "52": {
+    "name": "falafel",
+    "unity": "g",
+    "quantity":1,
+    "calories":3.33,
+    "carbs":0.3184,
+    "protein":0.1331,
+    "fat":0.178,
+    "eg": [
+      {
+        "name": "padrão 5cm +-",
+        "quantity": "17"
+      }
+    ]
+  },
+  "53": {
+    "name": "kibe cru",
+    "unity": "g",
+    "quantity":1,
+    "calories":1.095,
+    "carbs":0.108,
+    "protein":0.124,
+    "fat":0.14
+  },
+  "54": {
+    "name": "kibe frito",
+    "unity": "g",
+    "quantity":1,
+    "calories":2.52,
+    "carbs":0.1597,
+    "protein":0.1105,
+    "fat":0.1622,
+    "eg": [
+      {
+        "name": "médio",
+        "quantity": "110"
+      }
+    ]
+  },
+  "55": {
+    "name": "pipoca",
+    "unity": "g",
+    "quantity":1,
+    "calories":3.75,
+    "carbs":0.74,
+    "protein":0.11,
+    "fat":0.043,
+    "eg": [
+      {
+        "name": "xícara",
+        "quantity": "25"
+      }
+    ]
+  },
+  "56": {
+    "name": "pipoca doce caramelizada chocolate etc.",
+    "unity": "g",
+    "quantity":1,
+    "calories":4.2,
+    "carbs":0.92,
+    "protein":0.11,
+    "fat":0.043,
+    "eg": [
+      {
+        "name": "xícara",
+        "quantity": "25"
+      }
+    ]
+  },
+  "57": {
+    "name": "carne proteina soja",
+    "unity": "g",
+    "quantity":1,
+    "calories":3,
+    "carbs":0.2,
+    "protein":0.52,
+    "fat":0.0
+  },
+  "58": {
+    "name": "carne linguiça calabresa / salame",
+    "unity": "g",
+    "quantity":1,
+    "calories":3.08,
+    "carbs":0,
+    "protein":0.14,
+    "fat":0.28
+  },
+  "59": {
+    "name": "gelatina SEM açucar ZERO",
+    "unity": "g",
+    "quantity":1,
+    "calories":3,
+    "carbs":0.266,
+    "protein":0.466,
+    "fat":0
   }
+
 
 }

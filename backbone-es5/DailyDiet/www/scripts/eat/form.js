@@ -26,7 +26,9 @@ define([
             'click .btn-delete-confirm': 'deleteConfirm',
             'click .btn-delete-cancel': 'deleteCancel',
 
-            'click .btn-calendar': 'calendarClick'
+            'click .btn-calendar': 'calendarClick',
+            'click .btn-search': 'searchClick',
+            'click .date-btn': 'dateSpecific'
         },
 
         initialize: function(){
@@ -41,10 +43,12 @@ define([
             //this.$('.createdAtShow').text(app.moment(this.model.get('createdAt')).format('lll'));
             this.calendarInitialize();
             this.foodListInitialize();
+            this.groupDayPeriodInitialize();
+            this.groupTypeInitialize();
 
             return this;
         },
-        
+
         show: function(){
             console.log('module:eat:form:show');
 
@@ -87,6 +91,64 @@ define([
             this.show();
         },
 
+        groupDayPeriodInitialize: function() {
+            console.log('module:eat:form:groupDayPeriodInitialize');
+
+            this.$('.groupDayPeriodTitle').text(app.moment().format('lll'));
+
+            this.groupDayPeriod = new app.ui.Radio({
+                el: this.$('.groupDayPeriod'),
+                items: app.db.dayperiod
+            });
+
+            var now;
+            if(!this.model.isNew()) {
+                now = app.moment();
+                this.model.set('createdAt', now.toISOString());
+                this.model.set('createdAtDay', now.format('YYYYMMDD'));
+            } else {
+                now = app.moment(this.model.get('createdAt'));
+            }
+
+            var period = app.db.dayperiod.getPeriodByHour(now.format('HHmm'));
+            this.groupDayPeriod.val(period.id);
+            this.model.set('groupPeriod',period.id);
+
+            this.groupDayPeriod.on('select',this.groupDayPeriodVal,this);
+        },
+
+        groupDayPeriodVal: function() {
+            console.log('module:eat:form:groupDayPeriodVal');
+
+            //var now = app.moment();
+            //this.model.set('createdAt', now.toISOString());
+            //this.model.set('createdAtDay', now.format('YYYYMMDD'));
+
+            var period = app.db.dayperiod.getPeriodByHour(now.format('HHmm'));
+            this.groupDayPeriod.val(period.id);
+            this.model.set('groupPeriod',period.id);
+        },
+
+        groupTypeInitialize: function() {
+            console.log('module:eat:form:groupTypeInitialize');
+
+            this.groupType = new app.ui.Radio({
+                el: this.$('.groupType'),
+                items: app.db.dayeattype
+            });
+
+            var type = app.db.dayeattype.findWhere({ period: this.model.get('groupPeriod') });
+            this.groupType.val(type.id);
+            this.model.set('groupType',type.id);
+
+            this.groupType.on('select',this.groupTypeVal,this);
+        },
+
+        groupTypeVal: function() {
+            console.log('module:eat:form:groupTypeVal');
+            this.model.set('groupType',this.groupType.val());
+        },
+
         foodListInitialize: function(){
             console.log('module:eat:form:foodListInitialize');
 
@@ -110,6 +172,11 @@ define([
                 display: 'name',
                 source: food
             });
+
+            if(this.model.get('food_id')){
+                this.$('.unity').text(this.model.get('food_unity'));
+                this.foodListField.val(this.model.get('food_name'));
+            }
 
             this.foodListField.on('typeahead:select', _.bind(this.foodListSelect, this));
         },
@@ -140,7 +207,8 @@ define([
 
             this.createdAt = this.$('input[name=createdAt]').datetimepicker({
                 defaultDate: app.moment(this.model.get('createdAt')),
-                sideBySide: true
+                sideBySide: true,
+                showClose: true
             });
 
             this.$('input[name=createdAt]').on('dp.change', function(e){
@@ -155,6 +223,20 @@ define([
             console.log('module:eat:form:calendarClick');
 
             this.$('input[name=createdAt]').focus();
+        },
+
+        dateSpecific: function(){
+            console.log('module:eat:form:dateSpecific');
+
+            this.$('.groupDayPeriod-container').hide();
+            this.$('.date-btn').hide();
+            this.$('.date-container').show();
+        },
+
+        searchClick: function(){
+            console.log('module:eat:form:searchClick');
+
+            this.$('input[name=food]').focus();
         },
 
         edit: function(model){

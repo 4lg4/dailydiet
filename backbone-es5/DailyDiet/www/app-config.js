@@ -72,6 +72,8 @@ require([
     , 'scripts/core/router'
     , 'scripts/core/navbar'
     , 'scripts/core/modal'
+    , 'scripts/core/ui/dropdown'
+    , 'scripts/core/ui/radio'
     , 'typeahead'
     //, 'charts'
 ],function(
@@ -88,6 +90,8 @@ require([
     , Router
     , Navbar
     , Modal
+    , Dropdown
+    , Radio
     , typeahead
     //, charts
 ){
@@ -129,5 +133,7 @@ require([
     };
 
     app.ui.modal = Modal;
+    app.ui.Dropdown = Dropdown;
+    app.ui.Radio = Radio;
 
 });

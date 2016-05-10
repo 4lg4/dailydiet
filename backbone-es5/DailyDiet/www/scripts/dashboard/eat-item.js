@@ -26,8 +26,12 @@ define([
         initialize: function(){
             console.log('module:dashboard:eat-item:initialize');
 
-            this.model.set('dateShow',app.moment(this.model.get('date')).format('ll'));
+            this.model.set('dateShow',app.moment(this.model.get('date')).format('ddd DD MMM'));
 
+            if(!this.model.get('pound')){
+                this.model.set('pound',null);
+            }
+            
             this.model.set('dangerCalories','');
             if(parseFloat(this.model.get('calories')) > parseFloat(this.model.get('bmr'))){
                 this.model.set('dangerCalories','dangerCalories');

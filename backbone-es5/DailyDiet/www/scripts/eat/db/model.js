@@ -3,9 +3,9 @@
  */
 
 define([
-    'moment'
+      'moment'
 ],function(
-    moment
+      moment
 ) {
 
 
@@ -16,7 +16,9 @@ define([
                 createdAtDay: moment().format('YYYYMMDD'),
                 food: null,
                 foodUser: null,
-                quantity: null
+                quantity: null,
+                groupType: null,
+                groupPeriod: null
             }
         }
     });
