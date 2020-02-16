@@ -16,7 +16,7 @@
     "backbone": "^1.2.3",
     "backbone.localstorage": "^1.1.16",
     "eonasdan-bootstrap-datetimepicker": "^4.15.35",
-    "jquery": "^2.2.0",
+    "jquery": "^3.4.1",
     "moment": "^2.11.1",
     "requirejs": "^2.1.22",
     "requirejs-json": "0.0.3",
